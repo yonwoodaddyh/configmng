@@ -1,0 +1,31 @@
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${eureka_servers:http://localhost:8761/eureka}
+
+ribbon:
+  eureka:
+    enabled: true
+  MaxAutoRetries: 3
+  MaxUatoRetriesNextServer: 3
+  OkToRetryOnAllOperations: true
+  ConnectionTimeout: 5000
+  ReadTimeout: 5000
+  RetryableStatusCodes: 503, 408, 500, 404
+
+spring:
+  rabbitmq:
+    host: ${mq_host:localhost}
+    port: ${mq_port:5672}
+    username: ${mq_id:guest}
+    password: ${mq_pw:guest}
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
