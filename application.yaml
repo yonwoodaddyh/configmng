@@ -17,8 +17,8 @@ ribbon:
 
 spring:
   rabbitmq:
-    host: ${mq_host:localhost}
-    port: ${mq_port:5672}
+    host: ${mq_host:192.168.49.2}
+    port: ${mq_port:31263}
     username: ${mq_id:guest}
     password: ${mq_pw:guest}
 
